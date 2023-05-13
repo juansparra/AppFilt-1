@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvCarrito"
+        android:layout_alignParentStart="true"
+        android:text="   Carrito de productos"
+        android:textSize="25dp"
+        android:textAlignment="center"
+        android:layout_marginLeft="50dp"
+        />
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/shopping_cart"
+        android:layout_toEndOf="@id/tvCarrito"
+        android:layout_marginLeft="25dp"
+        />
+
+    <ListView
+        android:id="@+id/list_view_cart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/tvCarrito"
+        />
+
+</RelativeLayout>
