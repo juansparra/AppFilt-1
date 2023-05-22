@@ -13,7 +13,6 @@ import java.util.List;
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "mydatabase";
     private static final int DATABASE_VERSION = 8;
-
     private static final String TABLE_NAME = "users";
     private static final String COLUMN_ID = "id";
     private static final String COLUMN_NOMBRE = "nombre";
@@ -21,10 +20,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_FECHA_NACIMIENTO = "fechaNacimiento";
     private static final String COLUMN_DIRECCION = "direccion";
     private static final String COLUMN_TELEFONO = "telefeno";
-
-
-
-
 
 
 
@@ -36,6 +31,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             COLUMN_DIRECCION + " TEXT," + // Agrega la nueva columna aqui
             COLUMN_TELEFONO + " TEXT" +
             ")";
+
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }

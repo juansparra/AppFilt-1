@@ -6,51 +6,60 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.view.accessibility.AccessibilityManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.appfilt.databinding.ActivityLoginBinding;
+
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText editTextUsername;
-    private EditText editTextPassword;
+    ActivityLoginBinding binding;
+    DataBaseHelperLoginAndRegister dataBaseHelperLoginAndRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        binding = ActivityLoginBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        // Inicializa los elementos de la interfaz de usuario
-        editTextUsername = findViewById(R.id.editTextUsername);
-        editTextPassword = findViewById(R.id.editTextPassword);
+        dataBaseHelperLoginAndRegister = new DataBaseHelperLoginAndRegister(this);
 
-        Button buttonLogin = findViewById(R.id.buttonLogin);
-        buttonLogin.setOnClickListener(new View.OnClickListener() {
+        binding.buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                // Obtén los valores del nombre de usuario y la contraseña ingresados por el usuario
-                String username = editTextUsername.getText().toString();
-                String password = editTextPassword.getText().toString();
+            public void onClick(View view) {
+                String email = binding.editTextUsername.getText().toString();
+                String password = binding.editTextPassword.getText().toString();
 
-                // Verifica si el nombre de usuario y la contraseña son válidos (cambia esto para que se adapte a tu lógica de inicio de sesión)
-                if (isValidCredentials(username, password)) {
-                    // Si las credenciales son válidas, inicia sesión y navega a la actividad principal
-                    login();
+                if(email.equals("") || password.equals("")){
+                    Toast.makeText(LoginActivity.this, "Todos los campos son obligatorios", Toast.LENGTH_SHORT).show();
                 } else {
-                    // Si las credenciales no son válidas, muestra un mensaje de error al usuario
-                    Toast.makeText(LoginActivity.this, "Credenciales inválidas", Toast.LENGTH_SHORT).show();
+                    Boolean checkCredentials = dataBaseHelperLoginAndRegister.checkEmailPassword(email, password);
+
+                    if(checkCredentials == true){
+                        Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(LoginActivity.this, menu.class);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
+                    }
                 }
+
+            }
+        });
+
+        binding.registerRedirect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, RegisterUserActivity.class);
+                startActivity(intent);
             }
         });
     }
 
-    // Método para verificar si las credenciales ingresadas son válidas (cambia esto para que se adapte a tu lógica de inicio de sesión)
-    private boolean isValidCredentials(String username, String password) {
-        return username.equals("admin") && password.equals("123");
-    }
-
     // Método para iniciar sesión (cambia esto para que se adapte a tu lógica de inicio de sesión)
-    private void login() {
+   /* private void login() {
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean("isLoggedIn", true);
@@ -58,5 +67,5 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(LoginActivity.this, menu.class);
         startActivity(intent);
         finish();
-    }
+    }*/
 }

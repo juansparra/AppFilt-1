@@ -2,15 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
+    android:orientation="vertical"
+    android:gravity="center_vertical">
 
     <ImageView
         android:id="@+id/splash_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/logo" />
-
 
     <Button
         android:id="@+id/button_crud"
@@ -19,14 +18,15 @@
         android:layout_width="1000px"
         android:layout_height="200px"
         android:text="Registar filtros"
-        android:onClick="irARegistro" />
+        android:onClick="irARegistro"
+        android:layout_gravity="center_horizontal" />
 
     <Button
         android:id="@+id/button_list"
         android:layout_width="1000px"
         android:layout_height="200px"
         android:text="Consultar filtros"
-        android:onClick="irAConsulta" />
-
+        android:onClick="irAConsulta"
+        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>

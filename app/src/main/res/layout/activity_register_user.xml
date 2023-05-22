@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".RegisterUserActivity">
+
 
     <ImageView
         android:id="@+id/login_image"
@@ -16,7 +17,7 @@
         tools:layout_editor_absoluteY="0dp" />
 
     <EditText
-        android:id="@+id/editTextUsername"
+        android:id="@+id/editTextUsernameRegister"
         android:layout_width="304dp"
         android:layout_height="62dp"
         android:layout_marginStart="32dp"
@@ -33,12 +34,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonLogin"
+        android:id="@+id/buttonRegister"
         android:layout_width="304dp"
         android:layout_height="56dp"
         android:background="@color/color_boton_login"
         android:backgroundTint="@color/color_boton_login"
-        android:text="Iniciar sesión"
+        android:text="Registrar"
         android:textColor="#0001FB"
         android:textColorHint="#FFFFFF"
         app:cornerRadius="8dp"
@@ -46,11 +47,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editTextPassword"
+        app:layout_constraintTop_toTopOf="@+id/editTextPasswordRegister"
         app:layout_constraintVertical_bias="0.72" />
 
     <EditText
-        android:id="@+id/editTextPassword"
+        android:id="@+id/editTextPasswordRegister"
         android:layout_width="304dp"
         android:layout_height="56dp"
         android:layout_marginTop="28dp"
@@ -60,22 +61,22 @@
         android:padding="35px"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/buttonLogin"
+        app:layout_constraintBottom_toTopOf="@+id/buttonRegister"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextUsername"
+        app:layout_constraintTop_toBottomOf="@+id/editTextUsernameRegister"
         app:layout_constraintVertical_bias="0.26" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewRegister"
         android:layout_width="236dp"
         android:layout_height="58dp"
         android:layout_marginTop="96dp"
-        android:text="Inicio de sesion"
+        android:text="Registro de usuario"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextUsername"
+        app:layout_constraintBottom_toTopOf="@+id/editTextUsernameRegister"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -85,13 +86,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/registerRedirect"
-        android:text="No tienes una cuenta? Registrate"
+        android:id="@+id/loginRedirect"
+        android:text="Ya tienes una cuenta? Inicia Sesion"
         android:textColor="#FFFFFF"
         android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLogin"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRegister"
         app:layout_constraintVertical_bias="0.26"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
