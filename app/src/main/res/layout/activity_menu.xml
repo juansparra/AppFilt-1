@@ -1,32 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="#FFFFFF"
     android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="212dp"
+        android:layout_height="55dp"
+        android:text="Inicio"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.082" />
 
     <ImageView
         android:id="@+id/splash_image"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/logo" />
+        android:layout_marginBottom="143dp"
+        android:background="@drawable/rounded_corner"
+        android:src="@drawable/logo"
+        app:layout_constraintBottom_toTopOf="@+id/button_crud"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <ImageView
+        android:id="@+id/barra"
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner"
+        android:src="@drawable/barra"
+        app:layout_constraintBottom_toTopOf="@+id/button_crud"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/splash_image"
+        app:layout_constraintVertical_bias="0.377" />
 
     <Button
         android:id="@+id/button_crud"
-        android:layout_marginTop="500px"
-        android:layout_marginBottom="250px"
-        android:layout_width="1000px"
-        android:layout_height="200px"
-        android:text="Registar filtros"
+        android:layout_width="281dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="72dp"
+        android:background="#DFEBF7"
         android:onClick="irARegistro"
-        android:layout_gravity="center_horizontal" />
+        android:text="Registar filtros"
+        android:textColor="#0001FB"
+        app:layout_constraintBottom_toTopOf="@+id/button_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/splash_image" />
 
     <Button
         android:id="@+id/button_list"
-        android:layout_width="1000px"
-        android:layout_height="200px"
-        android:text="Consultar filtros"
+        android:layout_width="288dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="123dp"
+        android:background="#DFEBF7"
         android:onClick="irAConsulta"
-        android:layout_gravity="center_horizontal" />
+        android:text="Consultar filtros"
+        android:textColor="#0001FB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_crud" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

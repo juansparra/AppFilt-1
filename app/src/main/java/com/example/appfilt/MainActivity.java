@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonSubmit;
     private ListView listViewData;
     private List<User> userList;
-    private UserListAdapter userListAdapter;
-    private DatabaseHelper databaseHelper;
+    private static UserListAdapter userListAdapter;
+    private static DatabaseHelper databaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         userListAdapter.notifyDataSetChanged();
     }
 
-    private class UserListAdapter extends BaseAdapter {
+    static class UserListAdapter extends BaseAdapter {
         private Context context;
         private List<User> userList;
 
@@ -229,10 +229,7 @@ public class MainActivity extends AppCompatActivity {
                             String telefono = editTextTelefono.getText().toString();
 
 
-                            if (TextUtils.isEmpty(nombre) || TextUtils.isEmpty(apellido) || TextUtils.isEmpty(fechaNacimiento) || TextUtils.isEmpty(direccion) || TextUtils.isEmpty(telefono)) {
-                                Toast.makeText(MainActivity.this, "Por favor llena todos los espacios", Toast.LENGTH_SHORT).show();
-                                return;
-                            }
+
 
                             user.setNombre(nombre);
                             user.setApellido(apellido);

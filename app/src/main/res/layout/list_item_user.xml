@@ -9,31 +9,36 @@
         android:id="@+id/textview_nombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nombres" />
+        android:text="Nombres"
+        android:textColor="#000000" />
 
     <TextView
         android:id="@+id/textview_apellido"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Apellidos" />
+        android:text="Apellidos"
+        android:textColor="#000000" />
 
     <TextView
         android:id="@+id/textview_fechaNacimiento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fecha nacimiento" />
+        android:text="Fecha nacimiento"
+        android:textColor="#000000" />
 
     <TextView
         android:id="@+id/textview_direccion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Direccion" />
+        android:text="Direccion"
+        android:textColor="#000000" />
 
     <TextView
         android:id="@+id/textview_telefono"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Telefono" />
+        android:text="Telefono"
+        android:textColor="#000000" />
 
 
 
@@ -50,13 +55,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Eliminar" />
+            android:background="#DFEBF7"
+            android:text="Eliminar"
+            android:textColor="#0001FB" />
 
         <Button
             android:id="@+id/button_update"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Actualizar" />
+            android:background="#DFEBF7"
+            android:text="Actualizar"
+            android:textColor="#0001FB" />
     </LinearLayout>
 </LinearLayout>
