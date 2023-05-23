@@ -26,7 +26,7 @@
             android:id="@+id/edittext_apellido"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Apellidos"
+            android:hint="Descripcion"
             android:textColor="#3E3C3C"
             android:textColorHighlight="#595454"
             android:textColorHint="#434141" />
@@ -35,7 +35,7 @@
             android:id="@+id/edittext_fechaNacimiento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="FechaNacimiento"
+            android:hint="Fecha creacion"
             android:textColor="#3E3C3C"
             android:textColorHighlight="#595454"
             android:textColorHint="#434141" />
@@ -44,7 +44,7 @@
             android:id="@+id/edittext_direccion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="direccion"
+            android:hint="Autor"
             android:textColor="#3E3C3C"
             android:textColorHighlight="#595454"
             android:textColorHint="#434141" />
